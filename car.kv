@@ -1,0 +1,116 @@
+#:kivy 1.0.9
+# ref: https://kivy.org/docs/tutorials/pong.html
+
+<Car>:
+    size: 30, 15
+    canvas:
+        Color:
+            
+            rgba:1,0,0,1
+        PushMatrix
+        Rotate:
+            angle: self.angle
+            origin: self.center
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        PopMatrix
+<Car2>:
+    size: 30, 15
+    canvas:
+        Color:
+            rgba:0,1,1,1
+        PushMatrix
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        PopMatrix
+<Car3>:
+    size: 15, 30
+    canvas:
+        Color:
+            rgba:160/256,4/256,98/256,1
+        PushMatrix
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        PopMatrix
+<Car4>:
+    size: 15, 30
+    canvas:
+        Color:
+            rgba:229/256,157/256,13/256,1
+        PushMatrix
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        PopMatrix
+
+<Ball1>:
+    size: 10,10
+    canvas:
+        Color:
+            rgba: 1,0,0,1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<Ball2>:
+    size: 10,10
+    canvas:
+        Color:
+            rgba: 0,1,1,1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<Ball3>:
+    size: 10,10
+    canvas:
+        Color:
+            rgba: 1,1,0,1
+        Ellipse:
+            pos: self.pos
+            size: self.size
+<ClockRect>:
+    size: 30,15
+    canvas:
+        Color:
+            rgba: 1, 1, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Game>:
+    car: game_car
+    car2: game_car2
+    car3: game_car3
+    car4: game_car4
+    ball1: game_ball1
+    ball2: game_ball2
+    ball3: game_ball3
+
+    Car:
+        id: game_car
+        
+        pos: 30,430
+    Car2:
+        id: game_car2
+        pos: 50,170
+    Car3:
+        id: game_car3
+        pos: 220,300
+    Car4:
+        id: game_car4
+        pos: 515,450
+
+    Ball1:
+        id: game_ball1
+        center: self.parent.center
+    Ball2:
+        id: game_ball2
+        center: self.parent.center
+    Ball3:
+        id: game_ball3
+        center: self.parent.center
+    ClockRect:
+        pos: 700, 390
